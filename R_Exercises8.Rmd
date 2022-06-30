@@ -1,7 +1,11 @@
 ---
 title: "R Exercises Session 8"
-author: "Introduction to R for Data Management and Analysis"
-output: word_document
+author: "Allan Ambris"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -24,10 +28,31 @@ Check your work by knitting the document.
 1. Create a level 2 header below in Markdown with the name "Answer 1".
 
 
+## Answer 1
+
+
+
 2. Add an unordered Markdown list of your favorite food dishes and
 add their ingredients as sub-items in the list. You should enter at least two
 dishes with two ingredients each.
 
+
+* Pizza
+  + Dough
+  + Sauce
+  + Cheese
+  + Misc Toppings
+
+* Big Mac
+  + All beef paties (x2)
+  + Special Sauce
+  + Lettuce
+  + Cheese
+  + Pickles
+  + Onions
+  + Sesame seed bun
+  
+  
 
 3. Insert an R code chunk below. Show the `summary` of the `Orange` dataset.
 Run a linear regression using the `lm` function to predict `circumference` from
@@ -35,9 +60,17 @@ Run a linear regression using the `lm` function to predict `circumference` from
 assigned.
 
 
+```{r}
+summary(Orange)
+lmOrange <- predict(lm(Orange$circumference ~ Orange$age))
+summary(lmOrange)
+
+```
+
 4. Add an RMarkdown weblink (in link format) below to your favorite R reference
 website.
 
+[RStudio RMarkdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html)
 
 5. Replace the author field in the `yaml` header with your name and then
 successfully `knit` the RMarkdown document into a Word document.
